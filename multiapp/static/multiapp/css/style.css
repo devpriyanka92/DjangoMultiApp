@@ -1,0 +1,117 @@
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.header,
+.footer {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.header {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+}
+
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.list_form
+{
+  width: 100%;
+  height: 110%; 
+}
+
+.list_form_box
+{
+  width: 250px;
+  height: 200px;
+  background-color:#95bfe1;
+  margin:15px 10px 10px 0px;
+  padding: 8px;
+  display: block;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.list_form_icon
+{
+  width: 50%;
+  height: 100%;
+  background-color: #337ab7;
+  float: left;
+  padding-top:80px;
+  text-align: center;
+  color: white;
+  font-size: 30px;
+}
+.list_form_text
+{
+  width: 50%;
+  height: 100%;
+  background-color: #337ab7;
+  float: right;
+ text-align:center;
+ color: white;
+ padding-top:80px;
+}
+
+.scrollbox
+{
+  width:100%;
+  height: 220px;
+}
+
+.scroll  
+{
+  width: 100%;
+  top: 162%;
+  overflow-y: scroll; 
+}
+
+.contentbox {
+  width: 100%;
+  padding:30px;
+  background: #FFF;
+  height: 550px;
+  margin: 20px 0px 0px -16px;
+  font-size: 28px;
+  border: #CCC 1px solid;
+}
+
+.rbutton 
+ {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: absolute;
+    right: 0px;
+    top: 40%;
+    right:8%;
+    transform: translateY(-50%);
+    overflow: auto;
+}
+
+.rbutton > span.active {
+    background: rgb(240, 185, 11);
+}
+
+.rbutton > span {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    cursor: pointer;
+    margin-top: 6px;
+    border-radius: 100%;
+    background: rgb(132, 132, 132);
+    overflow: auto;
+}

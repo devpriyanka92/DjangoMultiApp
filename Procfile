@@ -1,0 +1,1 @@
+web: gunicorn DjangoMultiApp.wsgi --log-file -

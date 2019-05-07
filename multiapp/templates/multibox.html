@@ -1,0 +1,171 @@
+{% block content%}
+
+<script type="text/javascript">
+var scrollY = 0;
+var distance = 40;
+var speed = 24;
+function autoScrollTo(el) {
+	var currentY = window.pageYOffset;
+	var targetY = document.getElementById(el).offsetTop;
+	var bodyHeight = document.body.offsetHeight;
+	var yPos = currentY + window.innerHeight;
+	var animator = setTimeout('autoScrollTo(\''+el+'\')',24);
+	if(yPos > bodyHeight){
+		clearTimeout(animator);
+	} else {
+		if(currentY < targetY-distance){
+		    scrollY = currentY+distance;
+		    window.scroll(0, scrollY);
+	    } else {
+		    clearTimeout(animator);
+	    }
+	}
+}
+function resetScroller(el){
+	var currentY = window.pageYOffset;
+    var targetY = document.getElementById(el).offsetTop;
+	var animator = setTimeout('resetScroller(\''+el+'\')',speed);
+	if(currentY > targetY){
+		scrollY = currentY-distance;
+		window.scroll(0, scrollY);
+	} else {
+		clearTimeout(animator);
+	}
+}
+</script>
+
+<div class="container" style="margin-bottom: 20px;">
+		<h2 id="myheading" style="color: grey;">Features List</h2>
+
+		<div class="row">
+			<a href="#" onclick="return false;" onmousedown="autoScrollTo('div1');">
+	  			<div class="col-md-3">
+					<div class="list_form_box">
+						<div class="list_form ">
+							<div class="list_form_icon">
+								<span class="glyphicon glyphicon-pencil "></span>
+							</div>
+							<div class="list_form_text">
+								<strong>Chat</strong>
+							</div>
+						</div>
+					</div>
+				</div>
+  			</a>
+
+  			<a href="#" onclick="return false;" onmousedown="autoScrollTo('div2');">
+				<div class="col-md-3">
+					<div class="list_form_box">
+						<div class="list_form">
+							<div class="list_form_icon" >
+								<span class="glyphicon glyphicon-bullhorn"></span>
+							</div>
+							<div class="list_form_text">
+								<strong>Play Quiz</strong>
+							</div>
+						</div>
+					</div>
+				</div>
+			</a>
+
+			<a href="#" onclick="return false;" onmousedown="autoScrollTo('div3');">
+				<div class="col-md-3">
+					<div class="list_form_box">
+						<div class="list_form">
+							<div class="list_form_icon" >
+								<span class="glyphicon glyphicon-sunglasses"></span>
+							</div>
+							<div class="list_form_text">
+								<strong>Fashion</strong>
+							</div>
+						</div>
+					</div>
+				</div>
+			</a>
+
+			<div class="col-md-3">
+				<div class="list_form_box">
+					<div class="list_form">
+						<div class="list_form_icon" >
+							<span class="glyphicon glyphicon-pencil"></span>
+						</div>
+						<div class="list_form_text">
+							<strong>Chat</strong>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="list_form_box">
+					<div class="list_form">
+						<div class="list_form_icon" >
+							<span class="glyphicon glyphicon-pencil"></span>
+						</div>
+						<div class="list_form_text">
+							<strong>Chat</strong>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="list_form_box">
+					<div class="list_form">
+						<div class="list_form_icon" >
+							<span class="glyphicon glyphicon-pencil"></span>
+						</div>
+						<div class="list_form_text">
+							<strong>Chat</strong>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="list_form_box">
+					<div class="list_form">
+						<div class="list_form_icon" >
+							<span class="glyphicon glyphicon-pencil"></span>
+						</div>
+						<div class="list_form_text">
+							<strong>Chat</strong>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="list_form_box">
+					<div class="list_form">
+						<div class="list_form_icon" >
+							<span class="glyphicon glyphicon-pencil"></span>
+						</div>
+						<div class="list_form_text">
+							<strong>Chat</strong>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12" id="div1">
+					<div  class="contentbox">chat here ....</div>
+					<a href="#" onclick="return false;" onmousedown="resetScroller('myheading');">go back to top</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12" id="div2">
+					<div class="contentbox">lets play quiz ....</div>
+					<a href="#" onclick="return false;" onmousedown="resetScroller('myheading');">go back to top</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12" id="div3">
+					<div class="contentbox">about fashion ....</div>
+					<a href="#" onclick="return false;" onmousedown="resetScroller('myheading');">go back to top</a>
+				</div>
+			</div>
+
+		</div>
+	</div>
+{% endblock %}

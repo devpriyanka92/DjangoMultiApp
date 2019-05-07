@@ -1,0 +1,168 @@
+{% block content%}
+<script type="text/javascript">
+	$("#row2").mouseover(function(){$(this).css("overflow","scroll");});
+	$("#row1").mouseout(function(){$(this).css("overflow","hidden");});
+
+	function reloadScrollBars() {
+    document.documentElement.style.overflow = 'auto'; 
+    document.body.scroll = "yes"; 
+}
+
+	function unloadScrollBars() {
+    document.documentElement.style.overflow = 'hidden';
+    document.body.scroll = "no"; 
+}
+
+function detectMouseWheelDirection( e ) {
+  var delta = null, direction = false;
+  if ( !e ) { 
+    e = window.event;
+  }
+  if ( e.wheelDelta ) { 
+    delta = e.wheelDelta / 60;
+  } else if ( e.detail ) {
+    delta = -e.detail / 2;
+  }
+  if ( delta !== null ) {
+    direction = delta > 0 ? -200 : 200;
+  }
+
+  return direction;
+}
+
+if ( element.addEventListener ) {
+ element.addEventListener( 'DOMMouseScroll', function( e ) {
+   element.scrollBy({ 
+     top: detectMouseWheelDirection( e ),
+     left: 0, 
+     behavior: 'smooth' 
+  });
+ });
+}
+
+</script>
+<div class="container" style="margin-bottom: 20px;">
+	<h2 style="color: grey;">Features List</h2>
+	<div class="container scrollbox scroll" reloadScrollBars(); >
+		<a href="#" onclick=" ">
+			<div class="row row1">
+		  			<div class="col-md-3 ">
+						<div class="list_form_box">
+							<div class="list_form ">
+								<div class="list_form_icon">
+									<span class="glyphicon glyphicon-pencil "></span>
+								</div>
+								<div class="list_form_text">
+									<strong>Chat</strong>
+								</div>
+							</div>
+						</div>
+					</div>
+	  		
+					<div class="col-md-3">
+						<div class="list_form_box">
+							<div class="list_form">
+								<div class="list_form_icon" >
+									<span class="glyphicon glyphicon-bullhorn"></span>
+								</div>
+								<div class="list_form_text">
+									<strong>Play Quiz</strong>
+								</div>
+							</div>
+						</div>
+					</div>
+				
+					<div class="col-md-3">
+						<div class="list_form_box">
+							<div class="list_form">
+								<div class="list_form_icon" >
+									<span class="glyphicon glyphicon-sunglasses"></span>
+								</div>
+								<div class="list_form_text">
+									<strong>Fashion</strong>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				<div class="col-md-3">
+					<div class="list_form_box">
+						<div class="list_form">
+							<div class="list_form_icon" >
+								<span class="glyphicon glyphicon-pencil"></span>
+							</div>
+							<div class="list_form_text">
+								<strong>Chat</strong>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</a>
+
+		<a href="#" onclick=" ">
+				<div class="row row2" unloadScrollBars() >
+		  			<div class="col-md-3">
+						<div class="list_form_box">
+							<div class="list_form ">
+								<div class="list_form_icon">
+									<span class="glyphicon glyphicon-pencil "></span>
+								</div>
+								<div class="list_form_text">
+									<strong>Chat</strong>
+								</div>
+							</div>
+						</div>
+					</div>
+	  	
+					<div class="col-md-3">
+						<div class="list_form_box">
+							<div class="list_form">
+								<div class="list_form_icon" >
+									<span class="glyphicon glyphicon-bullhorn"></span>
+								</div>
+								<div class="list_form_text">
+									<strong>Play Quiz</strong>
+								</div>
+							</div>
+						</div>
+					</div>
+				
+					<div class="col-md-3">
+						<div class="list_form_box">
+							<div class="list_form">
+								<div class="list_form_icon" >
+									<span class="glyphicon glyphicon-sunglasses"></span>
+								</div>
+								<div class="list_form_text">
+									<strong>Fashion</strong>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				<div class="col-md-3">
+					<div class="list_form_box">
+						<div class="list_form">
+							<div class="list_form_icon" >
+								<span class="glyphicon glyphicon-pencil"></span>
+							</div>
+							<div class="list_form_text">
+								<strong>Chat</strong>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</a>
+
+		</div>
+	</div>
+</div>
+	<div style="text-align:center" class="rbutton">
+		<span class="active" onclick="row2"></a></span>
+		<span class="active" onclick="row1"></span>
+	</div>
+
+	</div>
+{% endblock %}

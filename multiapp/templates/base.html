@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MultiApp</title>
+
+    {% load static %}
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'multiapp/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'multiapp/js/autoScrollTo.js' %}" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'multiapp/images/icon.png' %}" type="image/x-icon"/>
+
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="header clearfix">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" class="active">
+                        <a href="{% url 'index' %}">Home</a>
+                    </li>
+                       
+                    <li role="presentation">
+                        <a href="{% url 'signup' %}">Sign Up</a>
+                    </li>
+
+                    <li role="presentation">
+                        <a href="{% url 'login' %}">Login</a>
+                    </li>
+
+                    <li role="presentation">
+                        <a href="{% url 'logout' %}">Logout</a>
+                    </li>
+
+                </ul>
+            </nav>
+            <h3 class="text-muted">
+                <a href="" style="text-decoration:none;">Django MultiApp</a>
+            </h3>
+        </div>
+        <section id="content">
+            {% block content %}{% endblock %}
+        </section>
+        <footer class="footer">
+            <center><p>&copy; 2011 Company, WeaveBytes InfoTech Pvt. Ltd </p></center>
+        </footer>
+
+    </div>
+    <!-- /container -->
+    <script src="{% static 'jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'axios.min.js' %}"></script>
+    <script src="{% static 'todos/js/todo.js' %}"></script>
+</body>
+
+</html>
